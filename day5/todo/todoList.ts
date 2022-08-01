@@ -43,10 +43,14 @@
 interface ArrayItem {
     checked: boolean,
     id: number,
-    value: String
+    value: string
 }
 // 数组类型赋值 别名
 type TodoListArray = Array<ArrayItem>
+// 定义新增数组
+let todoArray: TodoListArray = []
+
+
 
 // 获取ul标签
 let ul: HTMLUListElement = document.getElementsByTagName('ul')[0]
@@ -56,8 +60,7 @@ let allinfo: HTMLElement | null = document.getElementById("allinfo")
 let completed_todo: HTMLElement | null = document.getElementById("completed_todo")
 let clear_completed: HTMLElement | null = document.getElementById("clear_completed")
 
-// 定义新增数组
-let todoArray: TodoListArray = []
+
 
 // 定义数组自增id
 let nextId: number = 1
@@ -126,6 +129,7 @@ function circulationHtml(data: TodoListArray, checkId?: number) {
 
         ul.append(li)
     })
+    // 生成的条数
     changeLeftItem(data)
 }
 
